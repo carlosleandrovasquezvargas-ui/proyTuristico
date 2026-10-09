@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explora Riviera Maya</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="topbar">
+        <div class="brand">
+          <h1>Explora Riviera Maya</h1>
+          <p>Experiencias naturales y culturales</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <section class="toolbar" aria-label="Catálogo de experiencias">
+        <div class="toolbar-top">
+          <h2>Experiencias disponibles</h2>
+          <span id="contador" class="contador-badge">0 experiencias</span>
+        </div>
+
+        <div class="toolbar-controls">
+          <div class="busqueda-wrap">
+            <input id="busqueda" type="text" placeholder="Escriba su bus..." aria-label="Buscar experiencia" />
+          </div>
+
+          <!-- Agregado Reto: Filtro Precio Máximo -->
+          <div class="orden-wrap">
+            <label for="precio-max">Precio Máx ($):</label>
+            <input type="number" id="precio-max" placeholder="Ej. 600" min="0" style="width:70px; border:none; background:transparent; font-weight:600; outline:none;" />
+          </div>
+
+          <div class="orden-wrap">
+            <label for="ordenar">Ordenar:</label>
+            <select id="ordenar" aria-label="Ordenar por precio">
+              <option value="precio-asc">Menor a mayor</option>
+              <option value="precio-desc">Mayor a menor</option>
+            </select>
+          </div>
+
+          <div class="filtros" aria-label="Filtros de catálogo">
+            <button class="activo" data-categoria="todas">Todas</button>
+            <button data-categoria="naturaleza">Naturaleza</button>
+            <button data-categoria="cultura">Cultura</button>
+            <button data-categoria="aventura">Aventura</button>
+            <button data-categoria="astronomia">Astronomia</button>
+            <button data-categoria="gastronomia">Gastronomía</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zona de mensajes sin usar alert() -->
+      <div id="mensajes-sistema"></div>
+
+      <p id="estado" class="estado">Cargando experiencias...</p>
+      
+      <section id="catalogo" class="catalogo" aria-live="polite"></section>
+
+      <!-- Nueva sección requerida: Reservaciones -->
+      <section class="resumen">
+        <div class="resumen-header">
+            <h2>Mi reservación</h2>
+            <button id="btn-vaciar" class="btn-eliminar">Vaciar reservación</button>
+        </div>
+        <div id="listaReservas"><p class="sin-resultados">No hay experiencias seleccionadas.</p></div>
+        
+        <div class="resumen-totales">
+            <p>Total personas: <span id="total-personas">0</span></p>
+            <p class="total">Total: <span id="total">$0 MXN</span></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

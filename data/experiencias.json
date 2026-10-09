@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nombre": "Cenote Azul", "categoria": "naturaleza", "precio": 350, "cupo": 15, "icono": "🌊", "etiqueta": "Naturaleza" },
+  { "id": 2, "nombre": "Zona arqueológica", "categoria": "cultura", "precio": 480, "cupo": 20, "icono": "🏛️", "etiqueta": "Cultura" },
+  { "id": 3, "nombre": "Ruta en tirolesa", "categoria": "aventura", "precio": 750, "cupo": 10, "icono": "🧗", "etiqueta": "Aventura" },
+  { "id": 4, "nombre": "Reserva de tortugas", "categoria": "naturaleza", "precio": 420, "cupo": 18, "icono": "🐢", "etiqueta": "Naturaleza" },
+  { "id": 5, "nombre": "Comunidad maya", "categoria": "cultura", "precio": 550, "cupo": 12, "icono": "🏺", "etiqueta": "Cultura" },
+  { "id": 6, "nombre": "Kayak en manglar", "categoria": "aventura", "precio": 680, "cupo": 8, "icono": "🛶", "etiqueta": "Aventura" },
+  { "id": 7, "nombre": "Visita al planetario", "categoria": "astronomia", "precio": 500, "cupo": 20, "icono": "🔭", "etiqueta": "Astronomia" },
+  { "id": 8, "nombre": "Panorama de estrellas", "categoria": "astronomia", "precio": 350, "cupo": 15, "icono": "🌠", "etiqueta": "Astronomia" },
+  { "id": 9, "nombre": "Observación lunar", "categoria": "astronomia", "precio": 300, "cupo": 10, "icono": "🌕", "etiqueta": "Astronomia" },
+  { "id": 10, "nombre": "Ruta de sabores mayas", "categoria": "gastronomia", "precio": 620, "cupo": 12, "icono": "🌮", "etiqueta": "Gastronomía" }
+]

@@ -1,0 +1,495 @@
+:root {
+  --teal-700: #755dfe;
+  --teal-600: #482588;
+  --teal-500: #5900ff;
+  --panel: #f1f2f1;
+  --card-bg: #f3f3f3;
+  --chip-bg: #e5e8e6;
+  --chip-text: #375b66;
+  --text: #20353d;  
+  --muted: #67797e;
+  --border: rgba(24, 48, 58, 0.09);
+  --shadow: rgba(13, 42, 54, 0.12);
+  --accent-red: #843def;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  background: #dbdbdb;
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.encabezado {
+  background: linear-gradient(90deg, #2b1799 0%, #21138b 30%, #1b0b74 100%);
+  min-height: 200px;
+  padding: 2rem 2rem 3rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.topbar {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.encabezado h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.9rem, 5vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  font-weight: 800;
+}
+
+.encabezado p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.1rem, 1.8vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.contenedor {
+  width: min(1280px, 92%);
+  margin: -2rem auto 0;
+  padding-bottom: 2rem;
+}
+
+.toolbar {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 24px rgba(18, 36, 42, 0.08);
+  padding: 1.5rem 1.4rem 1.2rem;
+}
+
+.toolbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.toolbar-top h2 {
+  font-size: clamp(1.7rem, 2vw, 3rem);
+  color: #2b3a41;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.contador-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: #e8eef0;
+  color: #2a4f5e;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.toolbar-controls {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.4fr) minmax(130px, 0.8fr) minmax(150px, 0.8fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.busqueda-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border: 2px solid var(--accent-red);
+  background: #f8f8f8;
+  border-radius: 0.7rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+#busqueda {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  font-size: 1.05rem;
+  outline: none;
+}
+
+#busqueda::placeholder {
+  color: #3d515d;
+  opacity: 0.85;
+}
+
+.orden-wrap {
+  background: rgba(236, 239, 239, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 52px;
+}
+
+.orden-wrap label {
+  color: #2a4857;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#ordenar {
+  border: none;
+  background: transparent;
+  color: #2a4857;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.filtros {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filtros button {
+  border: 1px solid rgba(44, 63, 72, 0.12);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.filtros button:hover,
+.filtros button.activo {
+  background: var(--teal-600);
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(18, 110, 121, 0.24);
+}
+
+.estado {
+  text-align: center;
+  font-weight: bold;
+  color: var(--teal-600);
+  margin: 20px 0;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tarjeta {
+  background: rgba(246, 247, 247, 0.87);
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  box-shadow: 0 6px 22px rgba(12, 31, 37, 0.07);
+  overflow: hidden;
+}
+
+.imagen {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.2rem;
+  background: linear-gradient(135deg, #e8eef1 0%, #edf5f7 100%);
+}
+
+.imagen.naturaleza {
+  background: linear-gradient(135deg, #d9f0fb 0%, #edf8ff 100%);
+}
+
+.imagen.cultura {
+  background: linear-gradient(135deg, #efe9df 0%, #f8f2ea 100%);
+}
+
+.imagen.aventura {
+  background: linear-gradient(135deg, #e5f4df 0%, #effaf0 100%);
+}
+
+.imagen.astronomia {
+  background: linear-gradient(135deg, #e0d9f8 0%, #ece5ff 100%);
+}
+
+.imagen.gastronomia {
+  background: linear-gradient(135deg, #fdebd0 0%, #fef5e7 100%);
+}
+
+.informacion {
+  padding: 1.25rem 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.etiqueta {
+  text-transform: uppercase;
+  color: #456b7c;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.74rem;
+}
+
+.informacion h3 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  letter-spacing: -0.05em;
+  color: #223840;
+  font-weight: 500;
+}
+
+.precio {
+  color: #1f2f37;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cantidad-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #456b7c;
+  font-weight: 600;
+}
+
+.input-cantidad {
+  width: 60px;
+  padding: 4px;
+  margin-left: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+.btn-reservar {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background: var(--teal-700);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-reservar:hover {
+  background: var(--teal-500);
+}
+
+.sin-resultados {
+  grid-column: 1 / -1;
+  background: #fff;
+  border: 1px dashed rgba(64, 86, 101, 0.5);
+  border-radius: 0.8rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* SECCIÓN MI RESERVACIÓN */
+.resumen {
+  margin-top: 40px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resumen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.resumen-header h2 {
+  color: #223840;
+}
+
+.item-reserva {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reserva-info strong {
+  color: #223840;
+  font-size: 1.1rem;
+}
+
+.reserva-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.reserva-acciones {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-mini {
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 10px;
+  font-weight: bold;
+  color: var(--chip-text);
+}
+
+.btn-mini:hover {
+  background: #d8ddda;
+}
+
+.btn-eliminar {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-eliminar:hover {
+  background: #c0392b;
+}
+
+.resumen-totales {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--teal-600);
+}
+
+/* SISTEMA DE MENSAJES SENSORIALES (Sin alert) */
+#mensajes-sistema {
+  margin: 15px 0;
+}
+
+.alerta {
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  animation: fadein 0.4s ease-in-out;
+}
+
+.alerta.error {
+  background: #fdeaea;
+  color: #c0392b;
+  border: 1px solid #f5b7b1;
+}
+
+.alerta.exito {
+  background: #eafaf1;
+  color: #27ae60;
+  border: 1px solid #a9dfbf;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MEDIA QUERIES (RESPONSIVIDAD) */
+@media (max-width: 900px) {
+  .toolbar-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .encabezado {
+    min-height: 160px;
+    padding: 1.2rem 1rem 2.2rem;
+  }
+
+  .contenedor {
+    width: min(92%, 720px);
+  }
+
+  .toolbar {
+    padding: 1rem 0.8rem;
+  }
+
+  .catalogo {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .imagen {
+    min-height: 180px;
+  }
+
+  .filtros {
+    width: 100%;
+  }
+
+  .filtros button {
+    flex: 1 1 120px;
+  }
+
+  .item-reserva {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .resumen-totales {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
