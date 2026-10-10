@@ -37,7 +37,7 @@ select {
 }
 
 .encabezado {
-  background: linear-gradient(90deg, #2b1799 0%, #21138b 30%, #1b0b74 100%);
+  background: linear-gradient(90deg, #b424ed 0%, #6929b8 30%, #480b74 100%);
   min-height: 200px;
   padding: 2rem 2rem 3rem;
   display: flex;

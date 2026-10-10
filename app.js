@@ -167,8 +167,16 @@ function mostrarReservas() {
 
 // 6. Funciones del Carrito (Reto)
 window.eliminarReserva = function(id) {
-  reservas = reservas.filter(r => r.experienciaId !== id);
-  mostrarReservas();
+  // 1. Pedir confirmación al usuario
+  if (confirm("¿Estás seguro de eliminar esta experiencia de tu reservación?")) {
+    
+    // 2. Si acepta, filtramos el arreglo para quitar esa experiencia
+    reservas = reservas.filter(r => r.experienciaId !== id);
+    
+    // 3. Actualizamos la vista y mostramos el mensaje de éxito
+    mostrarReservas();
+    mostrarMensaje("Experiencia eliminada correctamente.", "exito");
+  }
 }
 
 window.modificarCantidad = function(id, cambio) {
